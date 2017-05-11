@@ -13,6 +13,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,14 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.sanket.inventoryapp.R;
-import com.example.sanket.inventoryapp.data.InventoryContract;
 import com.example.sanket.inventoryapp.data.InventoryContract.InventoryEntry;
-
-import static android.R.attr.data;
-import static android.R.attr.id;
-import static android.R.attr.name;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
@@ -81,6 +75,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
                 final EditText edittext = new EditText(v.getContext());
+                edittext.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder.setMessage(getString(R.string.enter_sold_quantity));
                 builder.setView(edittext);
 
@@ -169,6 +164,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
                 final EditText edittext1 = new EditText(v.getContext());
+                edittext1.setInputType(InputType.TYPE_CLASS_NUMBER);
                 builder.setMessage(getString(R.string.received_shipment));
                 builder.setView(edittext1);
 

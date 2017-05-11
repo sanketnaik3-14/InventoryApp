@@ -5,8 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.example.sanket.inventoryapp.data.InventoryContract.InventoryEntry;
 
-import static android.os.FileObserver.CREATE;
-
 /**
  * Created by sanket on 07/05/17.
  */

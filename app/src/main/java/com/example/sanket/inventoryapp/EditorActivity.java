@@ -24,16 +24,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.example.sanket.inventoryapp.data.InventoryContract;
 import com.example.sanket.inventoryapp.data.InventoryContract.InventoryEntry;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
-import static android.R.attr.bitmap;
-import static android.R.attr.data;
-import static android.R.attr.x;
 
 public class EditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
@@ -182,10 +175,10 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                 String stringSupplier = mSupplierEditText.getText().toString().trim();
                 byte[] img = getBytes(inventory_image);
 
-                if(TextUtils.isEmpty(stringName) && TextUtils.isEmpty(stringPrice) && TextUtils.isEmpty(stringQuantity) &&
-                        TextUtils.isEmpty(stringSupplier) && img == null) {
+                if(TextUtils.isEmpty(stringName) || TextUtils.isEmpty(stringPrice) || TextUtils.isEmpty(stringQuantity) ||
+                        TextUtils.isEmpty(stringSupplier) || img == null) {
 
-                    finish();
+                    Toast.makeText(this, "Please fill all the entries", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
