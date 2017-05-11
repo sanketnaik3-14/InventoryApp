@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sanket.inventoryapp.MainActivity">
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        
+    <ImageView
+        android:id="@+id/inventory_image"
+        android:layout_width="200dp"
+        android:layout_height="125dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/inventory" />
+
+    <TextView
+        android:id="@+id/inventory_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inventory_image"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:paddingTop="16dp"
+        android:text="@string/inventory_is_empty"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#DD000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inventory_textview"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:paddingTop="8dp"
+        android:text="@string/get_started"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="#A2AAB0" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/addinventory2"/>
+
+
+</RelativeLayout>
